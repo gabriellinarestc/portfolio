@@ -572,6 +572,10 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && contactModal?.classList.contains('open')) closeModal();
 });
 
+// Footer year
+const footerYear = document.getElementById('footer-year');
+if (footerYear) footerYear.textContent = new Date().getFullYear();
+
 // Auto-open if redirected back after send
 if (window.location.search.includes('sent=1')) {
   document.querySelector('.contact-modal-title').textContent = 'Message sent.';
