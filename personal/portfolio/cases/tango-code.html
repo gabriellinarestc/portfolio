@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tango Code — AI-First Design Transformation — Gabe Linares</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta name="description" content="How I led an AI-first transformation of a design team, cutting project delivery from 3 months to 1 month at half the cost.">
+  <meta property="og:title" content="Tango Code — AI-First Design Transformation — Gabe Linares">
+  <meta property="og:description" content="How I led an AI-first transformation of a design team, cutting project delivery from 3 months to 1 month at half the cost.">
+  <meta property="og:url" content="https://www.gabelinares.com/cases/tango-code.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.gabelinares.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.gabelinares.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tango Code — AI-First Design Transformation — Gabe Linares">
+  <meta name="twitter:description" content="How I led an AI-first transformation of a design team, cutting project delivery from 3 months to 1 month at half the cost.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ============================================
+       TANGO CODE CASE — CUSTOM STYLES
+       ============================================ */
+
+    /* ---- ILLUSTRATION FRAME ---- */
+    .illustration {
+      border: 1px solid var(--text-subtle);
+      border-radius: 12px;
+      margin: 2.5rem 0;
+      position: relative;
+    }
+    .illustration-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.55rem 1rem;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid var(--text-subtle);
+      border-radius: 12px 12px 0 0;
+    }
+    .illustration-toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .illustration-dots {
+      display: flex;
+      gap: 6px;
+    }
+    .illustration-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .illustration-dots span:nth-child(1) { background: #f87171; }
+    .illustration-dots span:nth-child(2) { background: #facc15; }
+    .illustration-dots span:nth-child(3) { background: #4ade80; }
+    .illustration-label {
+      font-family: var(--mono);
+      font-size: 0.55rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .illustration-badge {
+      font-family: var(--mono);
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #4ade80;
+      background: rgba(74,222,128,0.1);
+      border: 1px solid rgba(74,222,128,0.2);
+      padding: 0.2rem 0.5rem;
+      border-radius: 100px;
+    }
+    .illustration-body {
+      background: #0f0f12;
+      padding: 0;
+    }
+    .illustration-caption {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      border-top: 1px solid var(--text-subtle);
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+      border-radius: 0 0 12px 12px;
+    }
+
+    /* ---- CENTIMATTER SHARED TOKENS ---- */
+    .cm {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      --cm-bg: #0f0f12;
+      --cm-card: #18181b;
+      --cm-border: #27272a;
+      --cm-text: #fafafa;
+      --cm-muted: #a1a1aa;
+      --cm-subtle: #71717a;
+      --cm-surface: #0f0f12;
+      color: var(--cm-text);
+      background: var(--cm-bg);
+      transition: all 0.3s ease;
+    }
+    .cm.cm-light {
+      --cm-bg: #fafaf8;
+      --cm-card: #ffffff;
+      --cm-border: #e4e4e7;
+      --cm-text: #18181b;
+      --cm-muted: #71717a;
+      --cm-subtle: #a1a1aa;
+      --cm-surface: #f4f4f5;
+    }
+    .cm-card {
+      background: var(--cm-card);
+      border: 1px solid var(--cm-border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      transition: all 0.3s ease;
+    }
+    .cm-card-title {
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--cm-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+
+    /* ---- ILLUSTRATION 1: BRAND SELECTOR + SCORES ---- */
+    .cm-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 1.25rem;
+      border-bottom: 1px solid var(--cm-border);
+      background: var(--cm-card);
+      transition: all 0.3s ease;
+    }
+    .cm-header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .cm-logo { font-weight: 700; font-size: 0.85rem; letter-spacing: -0.02em; }
+    .cm-logo-sub { font-size: 0.6rem; color: var(--cm-muted); font-weight: 400; }
+    .cm-brand-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.65rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--cm-text);
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s;
+    }
+    .cm-brand-btn:hover { border-color: var(--cm-muted); }
+    .cm-brand-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .cm-brand-btn svg, .cm-filter-btn svg, .cm-theme-btn svg {
+      width: 14px; height: 14px; flex-shrink: 0;
+    }
+    .cm-header-right {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .cm-filter-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.65rem;
+      border: 1px solid var(--cm-border);
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      background: transparent;
+      color: var(--cm-text);
+      transition: border-color 0.2s;
+    }
+    .cm-filter-btn:hover { border-color: var(--cm-muted); }
+    .cm-filter-badge {
+      font-size: 0.55rem;
+      font-weight: 600;
+      background: var(--cm-text);
+      color: var(--cm-bg);
+      padding: 0.1rem 0.35rem;
+      border-radius: 3px;
+      line-height: 1.2;
+    }
+    .cm-theme-btn {
+      width: 32px; height: 32px;
+      border-radius: 6px;
+      border: 1px solid var(--cm-border);
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cm-text);
+      transition: border-color 0.2s;
+    }
+    .cm-theme-btn:hover { border-color: var(--cm-muted); }
+    .cm-mentions-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.65rem 1.25rem;
+      border-bottom: 1px solid var(--cm-border);
+    }
+    .cm-mentions-title-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .cm-mentions-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--cm-muted);
+    }
+    .cm-mentions-badge {
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      background: var(--cm-surface);
+      color: var(--cm-text);
+    }
+    .cm-mentions-grid {
+      display: flex;
+      border-top: none;
+    }
+    .cm-mention-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem 1.25rem;
+      border-right: 1px solid var(--cm-border);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .cm-mention-col:last-child { border-right: none; }
+    .cm-mention-col .cm-mention-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cm-mention-col .cm-mention-icon img {
+      width: 14px;
+      height: 14px;
+      object-fit: contain;
+    }
+    .cm-mention-count {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--cm-text);
+    }
+    .cm-mention-change {
+      font-size: 0.65rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .cm-mention-change svg { width: 10px; height: 10px; }
+    .cm-mention-name {
+      font-size: 0.65rem;
+      color: var(--cm-muted);
+    }
+    /* Model selector dropdown */
+    .cm-model-selector-wrap { position: relative; }
+    .cm-model-dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      width: 260px;
+      background: var(--cm-card);
+      border: 1px solid var(--cm-border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+      z-index: 50;
+      display: none;
+    }
+    .cm-model-dropdown.open { display: block; }
+    .cm-dropdown-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--cm-text);
+      margin-bottom: 0.2rem;
+    }
+    .cm-dropdown-desc {
+      font-size: 0.65rem;
+      color: var(--cm-muted);
+      line-height: 1.45;
+      margin-bottom: 0.75rem;
+    }
+    .cm-dropdown-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .cm-dropdown-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.4rem 0.55rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s, opacity 0.15s;
+      border: none;
+      background: none;
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+      color: var(--cm-text);
+    }
+    .cm-dropdown-row:hover { background: var(--cm-surface); }
+    .cm-dropdown-row.active { background: var(--cm-surface); }
+    .cm-dropdown-row.inactive { opacity: 0.4; }
+    .cm-dropdown-row .cm-mention-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cm-dropdown-row .cm-mention-icon img {
+      width: 14px;
+      height: 14px;
+      object-fit: contain;
+    }
+    .cm-dropdown-row-name {
+      flex: 1;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .cm-dropdown-check {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 1.5px solid var(--cm-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.15s;
+    }
+    .cm-dropdown-check.checked {
+      border-color: transparent;
+    }
+    .cm-dropdown-check svg {
+      width: 10px;
+      height: 10px;
+      stroke-width: 3;
+      color: #fff;
+    }
+    .cm-dropdown-footer {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--cm-border);
+      font-size: 0.65rem;
+      color: var(--cm-muted);
+      background: var(--cm-surface);
+      border-radius: 8px;
+      padding: 0.55rem 0.75rem;
+      line-height: 1.5;
+    }
+    .cm-chevron { transition: transform 0.2s; }
+    .cm-chevron.open { transform: rotate(180deg); }
+
+    /* ---- ILLUSTRATION 2: DEV AREA STATES ---- */
+    .cm-state-bar {
+      display: flex;
+      justify-content: center;
+      padding: 0.65rem 1.25rem;
+      border-bottom: 1px solid var(--cm-border);
+    }
+    .cm-state-pill {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--cm-border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--cm-surface);
+      padding: 0;
+    }
+    .cm-state-tab {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.85rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 500;
+      background: transparent;
+      color: var(--cm-muted);
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+      white-space: nowrap;
+    }
+    .cm-state-tab svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .cm-state-tab:hover { color: var(--cm-text); }
+    .cm-state-tab.active {
+      background: var(--cm-card);
+      color: var(--cm-text);
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    .cm-state-panel { padding: 1.25rem; background: var(--cm-bg); min-height: 220px; }
+
+    /* Subtle glow on interactive controls when they enter viewport */
+    .cm-filter-btn,
+    .cm-state-pill,
+    .cm-theme-toggle-pill {
+      transition: border-color 0.2s, box-shadow 0.4s;
+    }
+    .cm-filter-btn:hover,
+    .cm-state-pill:hover,
+    .cm-theme-toggle-pill:hover {
+      border-color: var(--cm-muted);
+      box-shadow: 0 0 0 1px var(--cm-muted);
+    }
+    .cm-nudge {
+      animation: cm-nudge 1.8s ease-out 0.3s 1;
+    }
+    @keyframes cm-nudge {
+      0% { box-shadow: 0 0 0 0 rgba(45,212,191,0.35); }
+      40% { box-shadow: 0 0 0 6px rgba(45,212,191,0.12); }
+      100% { box-shadow: 0 0 0 0 transparent; }
+    }
+    .cm-models-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+    .cm-model-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 8px;
+      background: var(--cm-surface);
+      transition: background 0.3s;
+    }
+    .cm-model-dot {
+      width: 10px; height: 10px;
+      border-radius: 3px; flex-shrink: 0;
+    }
+    .cm-model-name { font-size: 0.72rem; font-weight: 500; }
+    .cm-model-val {
+      margin-left: auto;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+    .cm-model-delta { font-size: 0.6rem; margin-left: 0.35rem; }
+    .cm-model-delta.up { color: #22c55e; }
+    .cm-model-delta.down { color: #ef4444; }
+
+    /* Prompts table */
+    .cm-prompts-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.75rem;
+      table-layout: fixed;
+    }
+    .cm-prompts-table col:nth-child(1) { width: 42%; }
+    .cm-prompts-table col:nth-child(2) { width: 14%; }
+    .cm-prompts-table col:nth-child(3) { width: 24%; }
+    .cm-prompts-table col:nth-child(4) { width: 20%; }
+    .cm-prompts-table th {
+      font-size: 0.6rem; font-weight: 500;
+      color: var(--cm-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--cm-border);
+    }
+    .cm-prompts-table td {
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--cm-border);
+      vertical-align: middle;
+    }
+    .cm-prompt-text {
+      max-width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.72rem;
+    }
+    .cm-vis-pct {
+      font-size: 0.72rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+    }
+    .cm-sentiment-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: 120px;
+    }
+    .cm-sentiment-bar {
+      flex: 1;
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, oklch(0.55 0.22 25), oklch(0.7 0.16 75), oklch(0.55 0.19 155));
+      position: relative;
+    }
+    .cm-sentiment-dot {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--cm-card);
+      transition: left 0.5s ease;
+    }
+    .cm-sentiment-val {
+      font-size: 0.65rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      min-width: 24px;
+      text-align: right;
+    }
+    .cm-model-logo {
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cm-model-logo img {
+      width: 11px;
+      height: 11px;
+      object-fit: contain;
+    }
+    .cm-model-logos {
+      display: flex;
+      gap: 3px;
+      align-items: center;
+    }
+    .cm-model-overflow {
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: var(--cm-surface);
+      font-size: 0.55rem;
+      font-weight: 600;
+      color: var(--cm-muted);
+      cursor: default;
+      position: relative;
+    }
+    .cm-model-overflow:hover .cm-overflow-tip {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .cm-overflow-tip {
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--cm-surface);
+      border: 1px solid var(--cm-border);
+      border-radius: 6px;
+      padding: 6px 8px;
+      display: flex;
+      gap: 3px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s;
+      z-index: 10;
+      white-space: nowrap;
+    }
+
+    /* Loading skeleton */
+    .cm-skeleton {
+      border-radius: 4px;
+      background: linear-gradient(90deg, #27272a 25%, #3f3f46 50%, #27272a 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s ease-in-out infinite;
+    }
+    .cm-light .cm-skeleton {
+      background: linear-gradient(90deg, #f4f4f5 25%, #e4e4e7 50%, #f4f4f5 75%);
+      background-size: 200% 100%;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Empty state */
+    .cm-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .cm-empty-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: var(--cm-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--cm-muted);
+    }
+    .cm-empty-title { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.25rem; }
+    .cm-empty-desc { font-size: 0.72rem; color: var(--cm-muted); }
+
+    /* ---- ILLUSTRATION 3: BRAND TABLE ---- */
+    /* ---- ILLUSTRATION 4: DESIGN TOKENS ---- */
+    .cm-token-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      padding: 1.25rem;
+    }
+    .cm-token-card {
+      background: var(--cm-card);
+      border: 1px solid var(--cm-border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .cm-token-header {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--cm-border);
+      font-size: 0.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--cm-subtle);
+    }
+    .cm-token-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--cm-border);
+      font-size: 0.7rem;
+      transition: background 0.15s;
+    }
+    .cm-token-row:last-child { border-bottom: none; }
+    .cm-token-row:hover { background: var(--cm-surface); }
+    .cm-token-name { color: var(--cm-muted); font-family: 'Space Mono', monospace; font-size: 0.62rem; }
+    .cm-token-swatch {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .cm-swatch {
+      width: 16px; height: 16px;
+      border-radius: 4px;
+      border: 1px solid var(--cm-border);
+      transition: background 0.3s;
+    }
+    .cm-token-val {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58rem;
+      color: var(--cm-muted);
+    }
+
+    /* ---- TRANSFORM COMPARE ---- */
+    .transform-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--text-subtle);
+      border: 1px solid var(--text-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+    .transform-col {
+      background: var(--bg-elevated);
+      padding: 2rem;
+    }
+    .transform-col-title {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+    }
+    .transform-col:first-child .transform-col-title { color: #f87171; }
+    .transform-col:last-child .transform-col-title { color: #4ade80; }
+    .transform-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .transform-step-num {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--text-subtle);
+      min-width: 1.5rem;
+      padding-top: 0.15rem;
+    }
+    .transform-duration {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--text-subtle);
+      text-align: center;
+    }
+    .transform-duration-val {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      color: var(--text);
+    }
+    .transform-duration-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ---- TOOLCHAIN GRID ---- */
+    .toolchain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--text-subtle);
+      border: 1px solid var(--text-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+    .toolchain-item {
+      background: var(--bg-elevated);
+      padding: 1.25rem;
+      transition: background 0.2s;
+    }
+    .toolchain-item:hover { background: rgba(45,212,191,0.05); }
+    .toolchain-item-name {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.03em;
+    }
+    .toolchain-item-role {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* ---- PIPELINE TABS ---- */
+    .pipeline-tabs {
+      display: flex;
+      border-bottom: 1px solid var(--text-subtle);
+      overflow-x: auto;
+      margin: 2rem 0 0;
+    }
+    .pipeline-tab {
+      flex-shrink: 0;
+      padding: 0.65rem 1.25rem;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .pipeline-tab:hover { color: var(--text); }
+    .pipeline-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .pipeline-panel {
+      display: none;
+      padding: 1.5rem 0;
+    }
+    .pipeline-panel.active { display: block; }
+    .pipeline-panel-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+      align-items: baseline;
+    }
+    .pipeline-panel-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      text-align: right;
+    }
+    .pipeline-panel-value {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .pipeline-panel-value strong { color: var(--text); font-weight: 500; }
+
+    /* ---- ORGANOGRAM ---- */
+    .organo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin: 2rem 0;
+    }
+    .organo-node {
+      padding: 0.75rem 1.75rem;
+      border: 1px solid var(--text-subtle);
+      border-radius: 8px;
+      background: var(--bg-elevated);
+      text-align: center;
+      transition: border-color 0.3s, background 0.3s;
+      cursor: default;
+      position: relative;
+    }
+    .organo-node:hover {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+    .organo-node-title {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text);
+    }
+    .organo-node-desc {
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+    .organo-node--accent {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+    .organo-node--accent .organo-node-title { color: var(--accent); }
+    .organo-connector {
+      width: 1px;
+      height: 24px;
+      background: var(--text-subtle);
+    }
+    .organo-branch {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      position: relative;
+    }
+    .organo-branch::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 120px);
+      height: 1px;
+      background: var(--text-subtle);
+    }
+    .organo-branch-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      flex: 1;
+    }
+    .organo-branch-connector {
+      width: 1px;
+      height: 20px;
+      background: var(--text-subtle);
+    }
+
+    /* ---- THEME TOGGLE PILL ---- */
+    .cm-theme-toggle-pill {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--cm-border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--cm-surface);
+      cursor: pointer;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s;
+    }
+    .cm-theme-toggle-pill:hover { border-color: var(--cm-muted); }
+    .cm-toggle-option {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--cm-muted);
+      transition: background 0.25s, color 0.25s;
+      white-space: nowrap;
+    }
+    .cm-toggle-option.active {
+      background: var(--cm-card);
+      color: var(--cm-text);
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+
+    /* ---- SOURCE LIST ---- */
+    .source-list {
+      margin: 2rem 0;
+      padding: 0;
+      list-style: none;
+    }
+    .source-item {
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 0.5rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--text-subtle);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .source-num {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--accent);
+    }
+    .source-item strong { color: var(--text); font-weight: 500; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      .cm-mentions-grid { flex-wrap: wrap; }
+      .cm-models-grid { grid-template-columns: 1fr; }
+      .cm-token-grid { grid-template-columns: 1fr; }
+      .toolchain-grid { grid-template-columns: 1fr; }
+      .transform-compare { grid-template-columns: 1fr; }
+      .cm-header-bar { flex-wrap: wrap; gap: 0.5rem; }
+      .cm-header-right { flex-wrap: wrap; }
+      .organo-branch { flex-direction: column; align-items: center; }
+      .organo-branch::before { display: none; }
+      /* Prompts table: hide sentiment+models, show only prompt+visibility */
+      .cm-prompts-table col:nth-child(3),
+      .cm-prompts-table col:nth-child(4) { width: 0; }
+      .cm-prompts-table th:nth-child(3),
+      .cm-prompts-table td:nth-child(3),
+      .cm-prompts-table th:nth-child(4),
+      .cm-prompts-table td:nth-child(4) { display: none; }
+      .cm-prompts-table col:nth-child(1) { width: 65%; }
+      .cm-prompts-table col:nth-child(2) { width: 35%; }
+      .cm-prompts-table { font-size: 0.65rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+
+  <a href="../index.html#work" class="case-back"><span class="arrow"><svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span> Back to all work</a>
+
+  <div class="case-page">
+    <div class="case-hero">
+      <div class="section-label">Case Study 05</div>
+      <h2 class="case-hero-title">Tango Code — AI-First<br>Design Transformation</h2>
+      <div class="case-hero-quote">"Gabe has been a force of nature when it comes to research, develop, test, learn, repeat in our new path."</div>
+    </div>
+
+    <div class="case-meta-grid">
+      <div class="case-meta-item"><span>Role</span><strong>Design Engineer</strong></div>
+      <div class="case-meta-item"><span>Team</span><strong>CEO, CAIO, 4 Designers, Dev Team</strong></div>
+      <div class="case-meta-item"><span>Duration</span><strong>1 week to implement, ongoing</strong></div>
+      <div class="case-meta-item"><span>Tools</span><strong>Claude Code, Figma MCPs, GitHub, Vercel, CodeRabbit</strong></div>
+    </div>
+
+    <div class="case-layout">
+      <nav class="case-sidebar">
+        <a href="#tc-thesis" class="active">Thesis</a>
+        <a href="#tc-machine">New Machine</a>
+        <a href="#tc-proof">Proof</a>
+        <a href="#tc-reliability">Ship Fast, Break Nothing</a>
+      </nav>
+
+      <div class="case-content">
+
+        <!-- ========== 01 THESIS ========== -->
+        <div class="case-section" id="tc-thesis">
+          <div class="case-section-title"><span class="num">01</span> Thesis</div>
+          <div class="case-body">
+            <p>Clients expect the speed of vibe coders and the quality of a professional software house. Tango Code, a global software house, was shipping quality work in 2-3 month engagements. Most of that time was process overhead: handoffs, review cycles, waiting for fixes.</p>
+          </div>
+
+          <div class="results-grid">
+            <div class="result-card">
+              <div class="result-card-value">50%</div>
+              <div class="result-card-label">Reduction in project costs</div>
+            </div>
+            <div class="result-card">
+              <div class="result-card-value">3x</div>
+              <div class="result-card-label">Faster delivery (3 months &rarr; 1 month)</div>
+            </div>
+            <div class="result-card">
+              <div class="result-card-value">Zero</div>
+              <div class="result-card-label">UI review Jira tasks created</div>
+            </div>
+          </div>
+
+          <div class="case-body">
+            <p>McKinsey estimated $4.4 trillion in annual productivity potential from generative AI. GitHub reported developers completing tasks 55% faster with Copilot. The numbers were there. What was missing was someone willing to rewire the actual process, test it, validate it, and bring the whole team along.</p>
+          </div>
+
+          <ol class="source-list">
+            <li class="source-item">
+              <span class="source-num">[1]</span>
+              <span><strong>McKinsey Global Institute, Jun 2023</strong> — Estimated $2.6T-$4.4T in annual value. Design and software engineering cited as top-impact functions.</span>
+            </li>
+            <li class="source-item">
+              <span class="source-num">[2]</span>
+              <span><strong>GitHub / Microsoft Research, 2022</strong> — Developers using Copilot completed tasks 55.8% faster. Strongest gains in boilerplate and repetitive code.</span>
+            </li>
+            <li class="source-item">
+              <span class="source-num">[3]</span>
+              <span><strong>Forrester, 2024</strong> — Companies with structured AI adoption saw 40-60% reduction in development cycle time.</span>
+            </li>
+            <li class="source-item">
+              <span class="source-num">[4]</span>
+              <span><strong>Gartner</strong> — By 2028, 75% of enterprise software engineers will use AI coding assistants, up from &lt;10% in early 2023.</span>
+            </li>
+          </ol>
+        </div>
+
+        <!-- ========== 02 NEW MACHINE ========== -->
+        <div class="case-section" id="tc-machine">
+          <div class="case-section-title"><span class="num">02</span> New Machine</div>
+          <div class="case-body">
+            <p>The transformation happened in one week. I worked with the CEO and CAIO to define the vision, then ran sessions with every designer on the team.</p>
+          </div>
+
+          <div class="transform-compare">
+            <div class="transform-col">
+              <div class="transform-col-title">Before</div>
+              <div class="transform-step"><span class="transform-step-num">01</span><span>Designer creates screens in Figma</span></div>
+              <div class="transform-step"><span class="transform-step-num">02</span><span>Handoff document written for devs</span></div>
+              <div class="transform-step"><span class="transform-step-num">03</span><span>Developer builds from static mockups</span></div>
+              <div class="transform-step"><span class="transform-step-num">04</span><span>Designer opens staging, files UI bugs in Jira</span></div>
+              <div class="transform-step"><span class="transform-step-num">05</span><span>Dev fixes bugs, pushes again</span></div>
+              <div class="transform-step"><span class="transform-step-num">06</span><span>Repeat steps 4-5 (3-5 rounds)</span></div>
+              <div class="transform-duration">
+                <div class="transform-duration-val">8-12 wk</div>
+                <div class="transform-duration-label">Average project delivery</div>
+              </div>
+            </div>
+            <div class="transform-col">
+              <div class="transform-col-title">After</div>
+              <div class="transform-step"><span class="transform-step-num">01</span><span>Designer creates screens in Figma</span></div>
+              <div class="transform-step"><span class="transform-step-num">02</span><span>Figma MCP connects design to Claude Code</span></div>
+              <div class="transform-step"><span class="transform-step-num">03</span><span>Designer builds navigable prototype in code</span></div>
+              <div class="transform-step"><span class="transform-step-num">04</span><span>Designer spots UI bug, fixes it directly</span></div>
+              <div class="transform-step"><span class="transform-step-num">05</span><span>PR created, CodeRabbit + dev team reviews</span></div>
+              <div class="transform-step"><span class="transform-step-num">06</span><span>Merge and deploy via Vercel</span></div>
+              <div class="transform-duration">
+                <div class="transform-duration-val">4 wk</div>
+                <div class="transform-duration-label">Average project delivery</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="toolchain-grid">
+            <div class="toolchain-item">
+              <div class="toolchain-item-name">Claude Code</div>
+              <div class="toolchain-item-role">AI coding agent. Designers write code through conversation, connected to Figma via MCPs.</div>
+            </div>
+            <div class="toolchain-item">
+              <div class="toolchain-item-name">Figma MCPs</div>
+              <div class="toolchain-item-role">Model Context Protocol servers. Design tokens, components, and layouts available as code context.</div>
+            </div>
+            <div class="toolchain-item">
+              <div class="toolchain-item-name">Custom Skills</div>
+              <div class="toolchain-item-role">Reusable prompt templates shared across the team for component generation, bug fixes, PRs.</div>
+            </div>
+            <div class="toolchain-item">
+              <div class="toolchain-item-name">GitHub + PRs</div>
+              <div class="toolchain-item-role">All code through pull requests. Branch protection enforced. Every change traceable.</div>
+            </div>
+            <div class="toolchain-item">
+              <div class="toolchain-item-name">CodeRabbit</div>
+              <div class="toolchain-item-role">AI code review on every PR. Catches logic errors, security issues, style inconsistencies.</div>
+            </div>
+            <div class="toolchain-item">
+              <div class="toolchain-item-name">Vercel</div>
+              <div class="toolchain-item-role">Preview deployments on every PR. Stakeholders review real, running code.</div>
+            </div>
+          </div>
+
+          <table class="implications-table">
+            <thead>
+              <tr>
+                <th>Activity</th>
+                <th>What it solved</th>
+                <th>Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Daily workshops</td>
+                <td>Some designers had never touched a terminal.</td>
+                <td>Full team onboarded to Claude Code within 5 days.</td>
+              </tr>
+              <tr>
+                <td>Skill library</td>
+                <td>Inconsistent prompting. Each person reinventing the wheel.</td>
+                <td>Standardized skill set via CLI. Predictable outputs.</td>
+              </tr>
+              <tr>
+                <td>Best practices</td>
+                <td>Fear of breaking things in real codebases.</td>
+                <td>Clear PR workflow, branch naming, commit guidelines.</td>
+              </tr>
+              <tr>
+                <td>1-on-1 pairing</td>
+                <td>Individual blockers with Git or CSS architecture.</td>
+                <td>Personalized support. Nobody left behind.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ========== 03 PROOF ========== -->
+        <div class="case-section" id="tc-proof">
+          <div class="case-section-title"><span class="num">03</span> Proof</div>
+          <div class="case-body">
+            <p>The first project built entirely under the new process was a brand monitoring platform for AI models. The client needed to track how ChatGPT, Claude, Gemini, and Perplexity mention and recommend brands. Estimated at 2-3 months. Shipped in one. Half the cost. I worked alongside Giovanna Souza, who co-designed the product screens using the same AI-first workflow.</p>
+            <p>These are live components from the production codebase. Each illustration showcases a specific design decision made possible by the AI-first workflow.</p>
+          </div>
+
+          <!-- ILLUSTRATION 1: MENTIONS BY MODEL -->
+          <div class="illustration">
+            <div class="illustration-toolbar">
+              <div class="illustration-toolbar-left">
+                <div class="illustration-dots"><span></span><span></span><span></span></div>
+                <div class="illustration-label">Mentions by Model — Live Filtering</div>
+              </div>
+            </div>
+            <div class="illustration-body">
+              <div class="cm" id="illust1">
+                <div class="cm-mentions-header">
+                  <div class="cm-mentions-title-row">
+                    <span class="cm-mentions-label">Mentions by Model</span>
+                    <span class="cm-mentions-badge" id="mentionsBadge">475 mentions</span>
+                  </div>
+                  <div class="cm-model-selector-wrap">
+                    <button class="cm-filter-btn" id="modelSelectorBtn" onclick="toggleModelDropdown(event)">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M12 3l1.912 5.813a2 2 0 001.272 1.272L21 12l-5.813 1.912a2 2 0 00-1.275 1.275L12 21l-1.912-5.813a2 2 0 00-1.275-1.275L3 12l5.813-1.912a2 2 0 001.275-1.275z"/></svg>
+                      <span id="modelSelectorLabel">All Models</span>
+                      <svg class="cm-chevron" id="modelChevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="cm-model-dropdown" id="modelDropdown">
+                      <p class="cm-dropdown-title">Which AI models to track?</p>
+                      <p class="cm-dropdown-desc">Toggle models on or off. Disabled models are hidden from the chart below.</p>
+                      <div class="cm-dropdown-list" id="modelDropdownList"></div>
+                      <div class="cm-dropdown-footer" id="modelDropdownFooter"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cm-mentions-grid" id="mentionsGrid"></div>
+              </div>
+            </div>
+            <div class="illustration-caption">Use the model selector dropdown to toggle AI models on and off. Each column shows the total mention count and growth rate for that model. The component reacts instantly — identical to how the production dashboard filters work.</div>
+          </div>
+
+          <!-- ILLUSTRATION 2: DEV AREA STATES -->
+          <div class="illustration">
+            <div class="illustration-toolbar">
+              <div class="illustration-toolbar-left">
+                <div class="illustration-dots"><span></span><span></span><span></span></div>
+                <div class="illustration-label">Dev Area — Widget State Machine</div>
+              </div>
+            </div>
+            <div class="illustration-body">
+              <div class="cm" id="illust2">
+                <div class="cm-state-bar">
+                  <div class="cm-state-pill">
+                    <button class="cm-state-tab active" data-panel="ready" onclick="setDevState('ready')">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                      Ready
+                    </button>
+                    <button class="cm-state-tab" data-panel="loading" onclick="setDevState('loading')">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                      Loading
+                    </button>
+                    <button class="cm-state-tab" data-panel="empty" onclick="setDevState('empty')">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+                      Empty
+                    </button>
+                    <button class="cm-state-tab" data-panel="stressed" onclick="setDevState('stressed')">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                      Stressed
+                    </button>
+                  </div>
+                </div>
+                <div class="cm-state-panel" id="devStatePanel">
+                  <!-- Rendered by JS -->
+                </div>
+              </div>
+            </div>
+            <div class="illustration-caption">Every widget in the product has 4 states: ready, loading, empty, and stressed (high-volume data). We built a Dev Area so the design team could test all states without needing real API data. Toggle each tab to see the state machine in action.</div>
+          </div>
+
+          <!-- ILLUSTRATION 3: DESIGN TOKENS + THEME -->
+          <div class="illustration">
+            <div class="illustration-toolbar">
+              <div class="illustration-toolbar-left">
+                <div class="illustration-dots"><span></span><span></span><span></span></div>
+                <div class="illustration-label">Design Tokens — Connected to Code</div>
+              </div>
+            </div>
+            <div class="illustration-body">
+              <div class="cm" id="illust3">
+                <div class="cm-header-bar" style="justify-content:center;gap:0.75rem;align-items:center;">
+                  <div style="font-size:0.7rem;font-weight:500;color:var(--cm-muted);">Design Tokens</div>
+                  <button class="cm-theme-toggle-pill" id="tokenThemeToggle">
+                    <span class="cm-toggle-option cm-toggle-dark active" id="toggleDarkLabel">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                      Dark
+                    </span>
+                    <span class="cm-toggle-option cm-toggle-light" id="toggleLightLabel">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                      Light
+                    </span>
+                  </button>
+                </div>
+                <div class="cm-token-grid" id="tokenGrid">
+                  <!-- Rendered by JS -->
+                </div>
+              </div>
+            </div>
+            <div class="illustration-caption">Design tokens in Figma map 1:1 to CSS custom properties in code. When a designer updates a color in Figma, the MCP pulls it into the codebase. Click the theme toggle to see every token swap in real time. This is how dark mode works with zero manual overrides.</div>
+          </div>
+
+
+          <div class="behavioral-comparison">
+            <div class="behavioral-group">
+              <div class="behavioral-pct">2-3 mo</div>
+              <div class="behavioral-pct-label">original estimate</div>
+              <div class="behavioral-name">Projected</div>
+              <ul class="behavioral-stats">
+                <li><strong>60+</strong> screens designed</li>
+                <li><strong>6</strong> feature modules</li>
+                <li><strong>3</strong> design-dev handoff rounds</li>
+                <li><strong>4-5</strong> UI review cycles in Jira</li>
+                <li><strong>100%</strong> projected budget</li>
+              </ul>
+            </div>
+            <div class="behavioral-group behavioral-group--right">
+              <div class="behavioral-pct">1 mo</div>
+              <div class="behavioral-pct-label">actual delivery</div>
+              <div class="behavioral-name">Reality</div>
+              <ul class="behavioral-stats">
+                <li><strong>60+</strong> screens shipped</li>
+                <li><strong>6</strong> feature modules live</li>
+                <li><strong>0</strong> design-dev handoff rounds</li>
+                <li><strong>0</strong> UI review Jira tasks</li>
+                <li><strong>50%</strong> of projected budget</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== 04 SHIP FAST, BREAK NOTHING ========== -->
+        <div class="case-section" id="tc-reliability">
+          <div class="case-section-title"><span class="num">04</span> Ship Fast, Break Nothing</div>
+          <div class="case-body">
+            <p>Speed without reliability is just chaos. Vibe coding produces demos that collapse in production. We were building real software for a paying client. Every shortcut had to be earned through testing, review, and validation.</p>
+          </div>
+
+          <!-- PIPELINE TABS -->
+          <div class="pipeline-tabs" id="pipelineTabs">
+            <button class="pipeline-tab active" data-layer="claude" onclick="setPipelineTab('claude')">Claude Code</button>
+            <button class="pipeline-tab" data-layer="coderabbit" onclick="setPipelineTab('coderabbit')">CodeRabbit</button>
+            <button class="pipeline-tab" data-layer="human" onclick="setPipelineTab('human')">Human Review</button>
+            <button class="pipeline-tab" data-layer="vercel" onclick="setPipelineTab('vercel')">Vercel Preview</button>
+          </div>
+          <div class="pipeline-panel active" id="panel-claude">
+            <div class="pipeline-panel-row">
+              <div class="pipeline-panel-label">Catches</div>
+              <div class="pipeline-panel-value"><strong>Syntax errors, type mismatches, component API violations.</strong> Most code arrives at the PR stage already functional and linted.</div>
+            </div>
+            <div class="pipeline-panel-row">
+              <div class="pipeline-panel-label">How</div>
+              <div class="pipeline-panel-value">The AI agent catches issues during generation. Designers describe what they want, Claude Code writes it, and if something breaks, the agent fixes it before the code ever leaves the terminal.</div>
+            </div>
+          </div>
+          <div class="pipeline-panel" id="panel-coderabbit">
+            <div class="pipeline-panel-row">
+              <div class="pipeline-panel-label">Catches</div>
+              <div class="pipeline-panel-value"><strong>Logic errors, security vulnerabilities, performance anti-patterns, naming inconsistencies, accessibility gaps.</strong></div>
+            </div>
+            <div class="pipeline-panel-row">
+              <div class="pipeline-panel-label">How</div>
+              <div class="pipeline-panel-value">Automated AI review that runs in seconds on every PR. Comments directly on diffs. Catches things humans miss during review fatigue.</div>
+            </div>
+          </div>
+          <div class="pipeline-panel" id="panel-human">
+            <div class="pipeline-panel-row">
+              <div class="pipeline-panel-label">Catches</div>
+              <div class="pipeline-panel-value"><strong>Architectural decisions, business logic correctness, edge cases specific to the domain, design intent alignment.</strong></div>
+            </div>
+            <div class="pipeline-panel-row">
+              <div class="pipeline-panel-label">How</div>
+              <div class="pipeline-panel-value">Dev team reviews every PR. AI review is fast, human review adds judgment. Both together create a process stronger than either alone.</div>
+            </div>
+          </div>
+          <div class="pipeline-panel" id="panel-vercel">
+            <div class="pipeline-panel-row">
+              <div class="pipeline-panel-label">Catches</div>
+              <div class="pipeline-panel-value"><strong>Visual regressions, responsive breakpoints, interaction bugs, real-device behavior.</strong></div>
+            </div>
+            <div class="pipeline-panel-row">
+              <div class="pipeline-panel-label">How</div>
+              <div class="pipeline-panel-value">Every PR gets a unique preview URL. Stakeholders click real, running code. No more "it works on my machine."</div>
+            </div>
+          </div>
+
+          <div class="case-body" style="margin-top:1.5rem;">
+            <h3>Designer autonomy with guardrails</h3>
+          </div>
+
+          <!-- ORGANOGRAM -->
+          <div class="organo">
+            <div class="organo-node organo-node--accent">
+              <div class="organo-node-title">Designer spots UI bug</div>
+              <div class="organo-node-desc">In the deployed product, not in Figma</div>
+            </div>
+            <div class="organo-connector"></div>
+            <div class="organo-node">
+              <div class="organo-node-title">Opens Claude Code</div>
+              <div class="organo-node-desc">Describes the issue in natural language</div>
+            </div>
+            <div class="organo-connector"></div>
+            <div class="organo-node">
+              <div class="organo-node-title">Fix generated + PR created</div>
+              <div class="organo-node-desc">Branch, commit, push in one step</div>
+            </div>
+            <div class="organo-connector"></div>
+            <div class="organo-branch">
+              <div class="organo-branch-item">
+                <div class="organo-branch-connector"></div>
+                <div class="organo-node">
+                  <div class="organo-node-title">CodeRabbit</div>
+                  <div class="organo-node-desc">AI review in seconds</div>
+                </div>
+              </div>
+              <div class="organo-branch-item">
+                <div class="organo-branch-connector"></div>
+                <div class="organo-node">
+                  <div class="organo-node-title">Dev Review</div>
+                  <div class="organo-node-desc">Human judgment layer</div>
+                </div>
+              </div>
+              <div class="organo-branch-item">
+                <div class="organo-branch-connector"></div>
+                <div class="organo-node">
+                  <div class="organo-node-title">Vercel Preview</div>
+                  <div class="organo-node-desc">Live URL to verify</div>
+                </div>
+              </div>
+            </div>
+            <div class="organo-connector"></div>
+            <div class="organo-node organo-node--accent">
+              <div class="organo-node-title">Merged in hours</div>
+              <div class="organo-node-desc">No Jira task. No waiting. No handoff.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>&copy; <span id="footerYear"></span> Gabe Linares</span>
+    <span>Design Engineer &middot; Sao Paulo, Brazil</span>
+  </footer>
+  <script>document.getElementById('footerYear').textContent = new Date().getFullYear();</script>
+
+  <script src="../js/case.js"></script>
+  <script>
+  (function() {
+    /* ============ SHARED ============ */
+    const MODELS = {
+      chatgpt:    { name: 'ChatGPT',    hex: '#10a37f', svg: 'tangocode/models/gpt.svg',        cf: 'invert(42%) sepia(93%) saturate(1352%) hue-rotate(130deg) brightness(91%) contrast(89%)' },
+      claude:     { name: 'Claude',      hex: '#d97757', svg: 'tangocode/models/claude.svg',     cf: 'invert(62%) sepia(52%) saturate(600%) hue-rotate(338deg) brightness(90%) contrast(85%)' },
+      gemini:     { name: 'Gemini',      hex: '#536dfe', svg: 'tangocode/models/gemini.svg',     cf: 'invert(37%) sepia(60%) saturate(4000%) hue-rotate(222deg) brightness(100%) contrast(100%)' },
+      perplexity: { name: 'Perplexity',  hex: '#20b8cd', svg: 'tangocode/models/perplexity.svg', cf: 'invert(58%) sepia(55%) saturate(600%) hue-rotate(152deg) brightness(92%) contrast(88%)' },
+      copilot:    { name: 'Copilot',     hex: '#0078d4', svg: 'tangocode/models/copilot.svg',    cf: 'invert(28%) sepia(90%) saturate(2000%) hue-rotate(196deg) brightness(92%) contrast(101%)' },
+      aioverview: { name: 'AI Overview', hex: '#9c5bce', svg: 'tangocode/models/gemini.svg',     cf: 'invert(38%) sepia(50%) saturate(800%) hue-rotate(240deg) brightness(82%) contrast(92%)' },
+    };
+
+    /* ============ ILLUSTRATION 1: MENTIONS BY MODEL ============ */
+    var MODEL_KEYS = ['chatgpt','claude','gemini','aioverview','perplexity','copilot'];
+    var MENTION_DATA = {
+      chatgpt:    { mentions: 187, change: '+34%' },
+      claude:     { mentions: 94,  change: '+28%' },
+      gemini:     { mentions: 71,  change: '+52%' },
+      aioverview: { mentions: 63,  change: '+41%' },
+      perplexity: { mentions: 38,  change: '+19%' },
+      copilot:    { mentions: 22,  change: '+12%' },
+    };
+    var activeModels = new Set(MODEL_KEYS);
+
+    function iconImg(key, size) {
+      size = size || 14;
+      var m = MODELS[key];
+      return '<img src="'+m.svg+'" alt="'+m.name+'" style="width:'+size+'px;height:'+size+'px;object-fit:contain;filter:'+m.cf+';">';
+    }
+
+    function renderMentions() {
+      var grid = document.getElementById('mentionsGrid');
+      var html = '';
+      var total = 0;
+      MODEL_KEYS.forEach(function(key) {
+        if (!activeModels.has(key)) return;
+        var m = MODELS[key];
+        var d = MENTION_DATA[key];
+        total += d.mentions;
+        html += '<div class="cm-mention-col">' +
+          '<div class="cm-mention-icon" style="background:'+m.hex+'15;">'+iconImg(key)+'</div>' +
+          '<div class="cm-mention-count">'+d.mentions+'</div>' +
+          '<div class="cm-mention-change" style="color:'+m.hex+';">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>' +
+            d.change +
+          '</div>' +
+          '<div class="cm-mention-name">'+m.name+'</div>' +
+        '</div>';
+      });
+      grid.innerHTML = html;
+      document.getElementById('mentionsBadge').textContent = total + ' mentions';
+      var count = activeModels.size;
+      document.getElementById('modelSelectorLabel').textContent = count === MODEL_KEYS.length ? 'All Models' : count + ' Models';
+    }
+
+    function renderDropdown() {
+      var list = document.getElementById('modelDropdownList');
+      var html = '';
+      MODEL_KEYS.forEach(function(key) {
+        var m = MODELS[key];
+        var checked = activeModels.has(key);
+        html += '<button class="cm-dropdown-row '+(checked ? 'active' : 'inactive')+'" data-model="'+key+'">' +
+          '<div class="cm-mention-icon" style="background:'+m.hex+'15;">'+iconImg(key)+'</div>' +
+          '<span class="cm-dropdown-row-name">'+m.name+'</span>' +
+          '<span class="cm-dropdown-check'+(checked ? ' checked' : '')+'" style="'+(checked ? 'background:'+m.hex+';border-color:'+m.hex+';' : '')+'">' +
+            (checked ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>' : '') +
+          '</span>' +
+        '</button>';
+      });
+      list.innerHTML = html;
+      document.getElementById('modelDropdownFooter').innerHTML =
+        'Tracking <strong style="color:var(--cm-text);">'+activeModels.size+' of '+MODEL_KEYS.length+'</strong> AI models across all dashboard sections.';
+
+      list.querySelectorAll('.cm-dropdown-row').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var key = this.dataset.model;
+          if (activeModels.has(key)) {
+            if (activeModels.size > 1) activeModels.delete(key);
+          } else {
+            activeModels.add(key);
+          }
+          renderDropdown();
+          renderMentions();
+        });
+      });
+    }
+
+    window.toggleModelDropdown = function(e) {
+      e.stopPropagation();
+      var dd = document.getElementById('modelDropdown');
+      var chev = document.getElementById('modelChevron');
+      dd.classList.toggle('open');
+      chev.classList.toggle('open');
+    };
+    document.getElementById('modelDropdown').addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+    document.addEventListener('click', function(e) {
+      var btn = document.getElementById('modelSelectorBtn');
+      if (btn && btn.contains(e.target)) return;
+      document.getElementById('modelDropdown').classList.remove('open');
+      document.getElementById('modelChevron').classList.remove('open');
+    });
+
+    renderMentions();
+    renderDropdown();
+
+    /* ============ ILLUSTRATION 2: DEV AREA STATES ============ */
+    function modelLogo(key) {
+      var m = MODELS[key];
+      return '<div class="cm-model-logo" title="'+m.name+'" style="background:'+m.hex+'15;">' +
+        iconImg(key, 11) + '</div>';
+    }
+    function modelLogos(models, max) {
+      max = max || 3;
+      var html = '<div class="cm-model-logos">';
+      var visible = models.slice(0, max);
+      var overflow = models.slice(max);
+      for (var i = 0; i < visible.length; i++) html += modelLogo(visible[i]);
+      if (overflow.length > 0) {
+        html += '<div class="cm-model-overflow">+' + overflow.length;
+        html += '<div class="cm-overflow-tip">';
+        for (var j = 0; j < overflow.length; j++) html += modelLogo(overflow[j]);
+        html += '</div></div>';
+      }
+      html += '</div>';
+      return html;
+    }
+    function tempColor(v) {
+      if (v >= 80) return 'oklch(0.55 0.19 155)';
+      if (v >= 60) return 'oklch(0.65 0.17 115)';
+      if (v >= 40) return 'oklch(0.7 0.16 75)';
+      return 'oklch(0.55 0.22 25)';
+    }
+    var PROMPTS_DATA = [
+      { text: 'best car dealer website platforms for lead generation', vis: 91, sent: 89, models: ['chatgpt','claude','gemini'] },
+      { text: 'and car dealer website SEO optimization strategies', vis: 87, sent: 72, models: ['chatgpt','perplexity','aioverview'] },
+      { text: 'top automotive website companies for car dealerships', vis: 86, sent: 81, models: ['claude','gemini','copilot'] },
+      { text: 'OEM certified website solutions for auto dealerships', vis: 85, sent: 65, models: ['chatgpt','claude'] },
+      { text: 'how to optimize car dealership inventory pages for AI', vis: 83, sent: 57, models: ['perplexity','aioverview','gemini'] },
+      { text: 'best digital advertising ADA compliance requirements', vis: 81, sent: 44, models: ['chatgpt','copilot'] },
+      { text: 'dealer website accessibility solutions for auto dealers', vis: 79, sent: 91, models: ['claude','perplexity','aioverview'] },
+    ];
+    var PROMPTS_STRESSED = [
+      { text: 'best car dealer website platforms for lead generation across all US markets', vis: 97, sent: 94, models: ['chatgpt','claude','gemini','perplexity','aioverview','copilot'] },
+      { text: 'top automotive digital retailing solutions comparison 2025 enterprise', vis: 82, sent: 31, models: ['chatgpt','claude','gemini','perplexity','copilot'] },
+      { text: 'OEM certified dealer website providers ranked by conversion rate', vis: 71, sent: 82, models: ['chatgpt','claude','gemini','aioverview'] },
+      { text: 'car dealership SEO optimization AI-first strategies for inventory pages', vis: 58, sent: 16, models: ['perplexity','aioverview','gemini','chatgpt'] },
+      { text: 'digital advertising compliance ADA WCAG automotive dealer websites 2025', vis: 45, sent: 69, models: ['chatgpt','copilot','claude','perplexity','aioverview'] },
+      { text: 'best CRM integrations for automotive dealer website lead management', vis: 34, sent: 91, models: ['claude','perplexity','aioverview','copilot'] },
+      { text: 'how car dealerships increase organic traffic through AI content optimization', vis: 23, sent: 52, models: ['chatgpt','gemini','perplexity','claude','copilot','aioverview'] },
+      { text: 'dealer website mobile optimization conversion rate benchmarks by OEM', vis: 88, sent: 45, models: ['chatgpt','claude','aioverview'] },
+      { text: 'automotive fixed ops digital scheduling website integration solutions', vis: 15, sent: 8, models: ['copilot','gemini','claude'] },
+    ];
+    var tblCols = '<colgroup><col><col><col><col></colgroup>';
+    function promptsTable(data) {
+      var html = '<table class="cm-prompts-table">'+tblCols+'<thead><tr><th>Prompt</th><th>Visibility</th><th>Sentiment</th><th>Models</th></tr></thead><tbody>';
+      for (var i = 0; i < data.length; i++) {
+        var p = data[i];
+        var vc = tempColor(p.vis);
+        var sc = tempColor(p.sent);
+        html += '<tr><td><div class="cm-prompt-text">'+p.text+'</div></td>' +
+          '<td><span class="cm-vis-pct" style="color:'+vc+'">'+p.vis+'%</span></td>' +
+          '<td><div class="cm-sentiment-wrap"><div class="cm-sentiment-bar"><div class="cm-sentiment-dot" style="left:'+Math.min(92,Math.max(8,p.sent))+'%;background:'+sc+';"></div></div><span class="cm-sentiment-val" style="color:'+sc+'">'+p.sent+'</span></div></td>' +
+          '<td>'+modelLogos(p.models, 3)+'</td></tr>';
+      }
+      return html + '</tbody></table>';
+    }
+    function promptsLoading() {
+      var html = '<table class="cm-prompts-table">'+tblCols+'<thead><tr><th>Prompt</th><th>Visibility</th><th>Sentiment</th><th>Models</th></tr></thead><tbody>';
+      var widths = [85, 70, 90, 60, 78];
+      for (var i = 0; i < 5; i++) {
+        html += '<tr>' +
+          '<td><div class="cm-skeleton" style="width:'+widths[i]+'%;height:14px;"></div></td>' +
+          '<td><div class="cm-skeleton" style="width:32px;height:14px;"></div></td>' +
+          '<td><div class="cm-sentiment-wrap"><div class="cm-skeleton" style="flex:1;height:6px;border-radius:3px;"></div><div class="cm-skeleton" style="width:20px;height:14px;margin-left:8px;"></div></div></td>' +
+          '<td><div style="display:flex;gap:4px;"><div class="cm-skeleton" style="width:16px;height:16px;border-radius:4px;"></div><div class="cm-skeleton" style="width:16px;height:16px;border-radius:4px;"></div><div class="cm-skeleton" style="width:16px;height:16px;border-radius:4px;"></div></div></td>' +
+          '</tr>';
+      }
+      return html + '</tbody></table>';
+    }
+    function promptsEmpty() {
+      return '<div class="cm-empty">' +
+        '<div class="cm-empty-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>' +
+        '<div class="cm-empty-title">No prompts tracked yet</div>' +
+        '<div class="cm-empty-desc">Add prompts to track how AI models respond to them and mention your brand.</div></div>';
+    }
+    window.setDevState = function(state) {
+      document.querySelectorAll('#illust2 .cm-state-tab').forEach(function(t) {
+        t.classList.toggle('active', t.dataset.panel === state);
+      });
+      var panel = document.getElementById('devStatePanel');
+      if (state === 'ready') panel.innerHTML = '<div class="cm-card"><div class="cm-card-title">Top Prompts</div>' + promptsTable(PROMPTS_DATA) + '</div>';
+      else if (state === 'loading') panel.innerHTML = '<div class="cm-card"><div class="cm-card-title">Top Prompts</div>' + promptsLoading() + '</div>';
+      else if (state === 'empty') panel.innerHTML = '<div class="cm-card">' + promptsEmpty() + '</div>';
+      else if (state === 'stressed') panel.innerHTML = '<div class="cm-card"><div class="cm-card-title">Top Prompts</div>' + promptsTable(PROMPTS_STRESSED) + '</div>';
+    };
+    setDevState('ready');
+
+    /* ============ ILLUSTRATION 3: DESIGN TOKENS ============ */
+    var tokenDark = true;
+    var TOKENS = {
+      'Surfaces': [
+        { name: '--background', dark: '#0f0f12', light: '#fafaf8' },
+        { name: '--card', dark: '#18181b', light: '#ffffff' },
+        { name: '--surface', dark: '#27272a', light: '#f4f4f5' },
+        { name: '--border', dark: '#27272a', light: '#e4e4e7' },
+      ],
+      'Typography': [
+        { name: '--foreground', dark: '#fafafa', light: '#18181b' },
+        { name: '--muted', dark: '#a1a1aa', light: '#71717a' },
+        { name: '--subtle', dark: '#71717a', light: '#a1a1aa' },
+      ],
+      'Models': [
+        { name: '--chatgpt', dark: '#10a37f', light: '#10a37f' },
+        { name: '--claude', dark: '#d97757', light: '#d97757' },
+        { name: '--gemini', dark: '#536dfe', light: '#536dfe' },
+        { name: '--perplexity', dark: '#20b8cd', light: '#20b8cd' },
+        { name: '--copilot', dark: '#0078d4', light: '#0078d4' },
+        { name: '--aioverview', dark: '#9c5bce', light: '#9c5bce' },
+      ],
+      'Status': [
+        { name: '--success', dark: '#22c55e', light: '#16a34a' },
+        { name: '--warning', dark: '#eab308', light: '#ca8a04' },
+        { name: '--destructive', dark: '#ef4444', light: '#dc2626' },
+      ],
+    };
+    function renderTokens() {
+      var grid = document.getElementById('tokenGrid');
+      var html = '';
+      var groups = Object.keys(TOKENS);
+      for (var g = 0; g < groups.length; g++) {
+        var group = groups[g];
+        var tokens = TOKENS[group];
+        html += '<div class="cm-token-card"><div class="cm-token-header">' + group + '</div>';
+        for (var i = 0; i < tokens.length; i++) {
+          var t = tokens[i];
+          var val = tokenDark ? t.dark : t.light;
+          html += '<div class="cm-token-row"><span class="cm-token-name">' + t.name + '</span>' +
+            '<div class="cm-token-swatch"><div class="cm-swatch" style="background:'+val+'"></div>' +
+            '<span class="cm-token-val">'+val+'</span></div></div>';
+        }
+        html += '</div>';
+      }
+      grid.innerHTML = html;
+    }
+    document.getElementById('tokenThemeToggle').addEventListener('click', function() {
+      tokenDark = !tokenDark;
+      document.getElementById('illust3').classList.toggle('cm-light', !tokenDark);
+      document.getElementById('toggleDarkLabel').classList.toggle('active', tokenDark);
+      document.getElementById('toggleLightLabel').classList.toggle('active', !tokenDark);
+      renderTokens();
+    });
+    renderTokens();
+
+    /* ============ PIPELINE TABS ============ */
+    window.setPipelineTab = function(layer) {
+      document.querySelectorAll('.pipeline-tab').forEach(function(t) {
+        t.classList.toggle('active', t.dataset.layer === layer);
+      });
+      document.querySelectorAll('.pipeline-panel').forEach(function(p) {
+        p.classList.toggle('active', p.id === 'panel-' + layer);
+      });
+    };
+    /* Nudge interactive controls on scroll-in */
+    var nudgeObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('cm-nudge');
+          nudgeObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('#modelSelectorBtn, .cm-state-pill, #tokenThemeToggle').forEach(function(el) {
+      nudgeObs.observe(el);
+    });
+  })();
+  </script>
+</body>
+</html>

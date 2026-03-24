@@ -1150,6 +1150,7 @@ nav {
 }
 
 .case-back:hover { color: var(--accent); }
+.case-mobile-nav { display: none; }
 
 .case-back .arrow {
   display: inline-flex;
@@ -2717,23 +2718,69 @@ footer {
     max-width: 100vw;
     overflow: hidden;
   }
-  .case-back { left: 1.5rem; }
 
-  /* 2. Layout: single column, grid-child safety */
+  /* Hide desktop back button — replaced by mobile nav bar */
+  .case-back { display: none; }
+
+  /* 2. Layout: single column, hide desktop sidebar */
   .case-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   .case-sidebar {
-    position: relative;
-    top: 0;
-    border-left: none;
-    border-bottom: 1px solid var(--text-subtle);
-    padding-left: 0;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
+    display: none;
   }
-  .case-sidebar a.active::before { display: none; }
+
+  /* Mobile section nav — dropdown in the top bar */
+  .case-mobile-nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.6rem 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--text-subtle);
+  }
+  .case-mobile-nav .case-back-mobile {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+  .case-mobile-nav .case-back-mobile svg {
+    width: 12px; height: 12px;
+    stroke: currentColor; stroke-width: 2; fill: none;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
+  .case-nav-select {
+    background: transparent;
+    border: 1px solid var(--text-subtle);
+    border-radius: 4px;
+    color: var(--text-muted);
+    font-family: var(--mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.6rem;
+    max-width: 55%;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23666' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    padding-right: 1.5rem;
+  }
 
   /* 3. Content column: prevent grid blowout, clip overflow */
   .case-content {
