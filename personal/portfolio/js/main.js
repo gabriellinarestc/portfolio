@@ -572,9 +572,115 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && contactModal?.classList.contains('open')) closeModal();
 });
 
+// ===========================================
+// TESTIMONIALS — CSS marquee + drag with throw inertia
+// ===========================================
+(function () {
+  const inner = document.getElementById('testimonialsInner');
+  if (!inner) return;
+
+  requestAnimationFrame(() => {
+    const DURATION = 55; // seconds, must match CSS animation duration
+    let halfWidth = inner.scrollWidth / 2;
+
+    let dragging    = false;
+    let dragStartX  = 0;
+    let dragStartPos= 0;
+    let dragVel     = 0;
+    let dragPrev    = 0;
+    let dragTime    = 0;
+    let throwRaf    = null;
+
+    function getCurrentX() {
+      const m = new DOMMatrix(window.getComputedStyle(inner).transform);
+      return -m.m41;
+    }
+
+    function wrap(x) {
+      return ((x % halfWidth) + halfWidth) % halfWidth;
+    }
+
+    function resumeAnimation(fromX) {
+      const delay = -(wrap(fromX) / halfWidth) * DURATION;
+      inner.style.transform = '';
+      inner.style.animation = `testimonials-scroll ${DURATION}s linear ${delay}s infinite`;
+    }
+
+    function startDrag(x) {
+      if (throwRaf) { cancelAnimationFrame(throwRaf); throwRaf = null; }
+      halfWidth = inner.scrollWidth / 2;
+      const pos = wrap(getCurrentX());
+      inner.style.animation = 'none';
+      inner.style.transform = `translateX(-${pos}px)`;
+      dragging     = true;
+      dragStartX   = x;
+      dragStartPos = pos;
+      dragVel      = 0;
+      dragPrev     = x;
+      dragTime     = performance.now();
+      inner.classList.add('is-dragging');
+    }
+
+    function moveDrag(x) {
+      if (!dragging) return;
+      const now = performance.now();
+      dragVel  = (x - dragPrev) / Math.max(1, now - dragTime) * 16;
+      dragPrev = x;
+      dragTime = now;
+      inner.style.transform = `translateX(-${wrap(dragStartPos - (x - dragStartX))}px)`;
+    }
+
+    function endDrag() {
+      if (!dragging) return;
+      dragging = false;
+      inner.classList.remove('is-dragging');
+      let pos = wrap(getCurrentX());
+      let vel = -dragVel;
+
+      function throwTick() {
+        vel *= 0.93;
+        pos  = wrap(pos + vel);
+        inner.style.transform = `translateX(-${pos}px)`;
+        if (Math.abs(vel) < 0.15) { resumeAnimation(pos); throwRaf = null; }
+        else throwRaf = requestAnimationFrame(throwTick);
+      }
+      throwRaf = requestAnimationFrame(throwTick);
+    }
+
+    inner.addEventListener('mousedown',  e => { e.preventDefault(); startDrag(e.clientX); });
+    window.addEventListener('mousemove', e => moveDrag(e.clientX));
+    window.addEventListener('mouseup',   ()  => endDrag());
+    inner.addEventListener('touchstart', e => startDrag(e.touches[0].clientX), { passive: true });
+    window.addEventListener('touchmove', e => { if (dragging) moveDrag(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend',  ()  => endDrag());
+  });
+})();
+
 // Footer year
 const footerYear = document.getElementById('footer-year');
 if (footerYear) footerYear.textContent = new Date().getFullYear();
+
+// ===========================================
+// 12. HAMBURGER MENU (Mobile)
+// ===========================================
+const hamburger = document.getElementById('navHamburger');
+const navLinksEl = document.querySelector('.nav-links');
+
+if (hamburger && navLinksEl) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinksEl.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  navLinksEl.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinksEl.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
 
 // Auto-open if redirected back after send
 if (window.location.search.includes('sent=1')) {

@@ -46,6 +46,7 @@
         <a href="#omie-overview" class="active">Overview</a>
         <a href="#omie-results">Results</a>
         <a href="#omie-cro">CRO Strategy</a>
+        <a href="#omie-experiment">Experiment Deep-Dive</a>
         <a href="#omie-frameworks">Frameworks</a>
         <a href="#omie-uiux">UI/UX Work</a>
       </nav>
@@ -106,9 +107,51 @@
           </div>
         </div>
 
+        <!-- Experiment Deep-Dive -->
+        <div class="case-section" id="omie-experiment">
+          <div class="case-section-title"><span class="num">04</span> Experiment Deep-Dive</div>
+          <div class="case-body">
+            <p>The 95% conversion lift didn't come from one big swing. It came from dozens of experiments. Here's one that changed how we thought about channel strategy entirely.</p>
+          </div>
+
+          <div class="experiment-card">
+            <div class="experiment-row">
+              <div class="experiment-label">Hypothesis</div>
+              <div class="experiment-content">Brazilian B2B buyers prefer WhatsApp for quick questions over filling out forms. If we add a WhatsApp CTA to high-intent pages, we'll capture visitors who would otherwise bounce without contacting sales.</div>
+            </div>
+            <div class="experiment-row">
+              <div class="experiment-label">Variant</div>
+              <div class="experiment-content">Added a persistent WhatsApp button sitewide plus inline CTAs on pricing and feature pages. Control had only form-based lead capture.</div>
+            </div>
+            <div class="experiment-row experiment-row--result">
+              <div class="experiment-label">Result</div>
+              <div class="experiment-content">
+                <div class="experiment-metrics">
+                  <div class="experiment-metric">
+                    <div class="experiment-metric-val">+269%</div>
+                    <div class="experiment-metric-lbl">WhatsApp conversions<br>month 1 after launch</div>
+                  </div>
+                  <div class="experiment-metric">
+                    <div class="experiment-metric-val">0.59</div>
+                    <div class="experiment-metric-lbl">Peak CR on WhatsApp<br>up from 0.20</div>
+                  </div>
+                  <div class="experiment-metric">
+                    <div class="experiment-metric-val">#1</div>
+                    <div class="experiment-metric-lbl">Highest-converting<br>channel on the site</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="experiment-row">
+              <div class="experiment-label">Learning</div>
+              <div class="experiment-content">In Brazil's B2B market, the informal channel outperformed forms by 3x in conversion rate — even in mid-market ERP. Buyers want to talk to a person, fast, without committing to a form. This shifted our channel strategy: WhatsApp CTAs now appear earlier in the funnel, and it became the primary lead channel within two months.</div>
+            </div>
+          </div>
+        </div>
+
         <!-- Frameworks -->
         <div class="case-section" id="omie-frameworks">
-          <div class="case-section-title"><span class="num">04</span> Frameworks</div>
+          <div class="case-section-title"><span class="num">05</span> Frameworks</div>
           <div class="case-body">
             <p>I mapped the entire service blueprint to align internal processes with user needs. Every touchpoint, every backstage action, every support system. Here's the structure:</p>
           </div>
@@ -190,7 +233,7 @@
 
         <!-- UI/UX Work -->
         <div class="case-section" id="omie-uiux">
-          <div class="case-section-title"><span class="num">05</span> UI/UX Work</div>
+          <div class="case-section-title"><span class="num">06</span> UI/UX Work</div>
           <div class="case-body">
             <p>Some highlights from the design work. Checkout flows, landing page variations, component explorations.</p>
           </div>
@@ -218,6 +261,58 @@
     <span>Design Engineer &middot; Sao Paulo, Brazil</span>
   </footer>
 
+  <style>
+    .experiment-card {
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+    }
+    .experiment-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border, rgba(255,255,255,0.06));
+    }
+    .experiment-row:last-child { border-bottom: none; }
+    .experiment-row--result { background: rgba(45,212,191,0.03); }
+    .experiment-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      padding-top: 0.15rem;
+    }
+    .experiment-content {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      opacity: 0.75;
+    }
+    .experiment-metrics {
+      display: flex;
+      gap: 2rem;
+      margin-top: 0.25rem;
+    }
+    .experiment-metric-val {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2dd4bf;
+      letter-spacing: -0.02em;
+    }
+    .experiment-metric-lbl {
+      font-size: 0.72rem;
+      line-height: 1.4;
+      opacity: 0.5;
+      margin-top: 0.2rem;
+    }
+    @media (max-width: 600px) {
+      .experiment-row { grid-template-columns: 1fr; gap: 0.5rem; }
+      .experiment-metrics { flex-wrap: wrap; gap: 1.25rem; }
+    }
+  </style>
   <script src="../js/case.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script>

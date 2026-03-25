@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nubank — International UI/UX — Gabe Linares</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta name="description" content="How I designed Nubank's first unified international institutional website across 4 countries and 3 languages.">
+  <meta property="og:title" content="Nubank — International UI/UX — Gabe Linares">
+  <meta property="og:description" content="How I designed Nubank's first unified international institutional website across 4 countries and 3 languages.">
+  <meta property="og:url" content="https://www.gabelinares.com/cases/nubank.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.gabelinares.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="https://www.gabelinares.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nubank — International UI/UX — Gabe Linares">
+  <meta name="twitter:description" content="How I designed Nubank's first unified international institutional website across 4 countries and 3 languages.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+
+  <a href="../index.html#work" class="case-back"><span class="arrow"><svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></span> Back to all work</a>
+
+  <div class="case-page">
+    <div class="case-hero">
+      <div class="section-label">Case Study 04</div>
+      <h2 class="case-hero-title">Nubank —<br>International UI/UX</h2>
+      <div class="case-hero-quote">"As we expand globally, we must reduce friction and increase cohesion along the journey for institutional information."</div>
+    </div>
+
+    <div class="case-meta-grid">
+      <div class="case-meta-item"><span>Role</span><strong>UI/UX Designer</strong></div>
+      <div class="case-meta-item"><span>Team</span><strong>3 Devs, 1 Designer, 1 Supervisor</strong></div>
+      <div class="case-meta-item"><span>Duration</span><strong>2 months</strong></div>
+      <div class="case-meta-item"><span>Tools</span><strong>Figma, Miro</strong></div>
+    </div>
+
+    <div class="case-layout">
+      <nav class="case-sidebar">
+        <a href="#nubank-overview" class="active">Overview</a>
+        <a href="#nubank-impact">Impact Estimate</a>
+        <a href="#nubank-discovery">Discovery</a>
+        <a href="#nubank-ia">Information Architecture</a>
+        <a href="#nubank-prototype">Prototype</a>
+        <a href="#nubank-published">Published</a>
+      </nav>
+
+      <div class="case-content">
+        <!-- Overview -->
+        <div class="case-section" id="nubank-overview">
+          <div class="case-section-title"><span class="num">01</span> Overview</div>
+          <div class="case-body">
+            <p>Nubank operates in Brazil, Argentina, Colombia, and Mexico. Tech offices in the USA and Europe. After the IPO, they needed to centralize their institutional presence.</p>
+            <p>Different countries had different websites. Different brands. Different content structures. Some pages existed in one country but not another. It was a mess.</p>
+            <p>Our job: build a multi-lingual institutional website with a Careers Hub, ESG Reports, and Pressroom. One domain. Accessible. Consistent.</p>
+          </div>
+        </div>
+
+        <!-- Impact Estimate -->
+        <div class="case-section" id="nubank-impact">
+          <div class="case-section-title"><span class="num">02</span> Impact Estimate</div>
+          <div class="case-body">
+            <p>The site shipped — but what moved? Without access to Nubank's analytics, I built a directional model using SEC employee filings, earnings reports, and employer brand rankings to estimate the scale of change. These are estimates, not reported metrics.</p>
+          </div>
+
+          <div class="impact-model">
+
+            <div class="impact-before-after">
+              <div class="impact-col impact-col--before">
+                <div class="impact-col-label">Before</div>
+                <div class="impact-col-sub">Pre-hub · Fragmented state</div>
+                <ul class="impact-list">
+                  <li>Careers traffic scattered across 4+ country-specific domains and Greenhouse ATS (boards.greenhouse.io/nubank)</li>
+                  <li>Zero Google Jobs eligibility — no structured data on job pages</li>
+                  <li>No institutional page for MX/CO candidates in their local language</li>
+                  <li>3 employees hired for every 100K+ in employer brand spend, all organic</li>
+                </ul>
+                <div class="impact-traffic-est">
+                  <div class="impact-traffic-num">~300–450K</div>
+                  <div class="impact-traffic-label">est. monthly careers-intent visits<br><span>scattered across 4+ domains</span></div>
+                </div>
+              </div>
+
+              <div class="impact-divider">
+                <svg viewBox="0 0 24 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0 L12 60 M6 54 L12 60 L18 54" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+
+              <div class="impact-col impact-col--after">
+                <div class="impact-col-label">After</div>
+                <div class="impact-col-sub">Post-hub · Consolidated</div>
+                <ul class="impact-list">
+                  <li>All careers traffic captured on owned domain — international.nubank.com.br</li>
+                  <li>500+ job pages with JSON-LD structured data, eligible for Google Jobs carousel</li>
+                  <li>Dedicated Spanish and Portuguese sections for MX and CO markets</li>
+                  <li>Universum: #3 most attractive employer for Brazilian students in 2022, up from #6</li>
+                </ul>
+                <div class="impact-traffic-est impact-traffic-est--after">
+                  <div class="impact-traffic-num">~600–800K</div>
+                  <div class="impact-traffic-label">est. monthly careers-intent visits<br><span>consolidated on owned domain</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="impact-signals">
+              <div class="impact-signal-title">Proxy signals used to calibrate the estimate</div>
+              <div class="impact-signals-grid">
+                <div class="impact-signal">
+                  <div class="impact-signal-stat">6,068</div>
+                  <div class="impact-signal-desc">Nubank employees end of 2021 — up from 2,929 in 2020. 3,100+ net hires in a single year, the company's fastest hiring year ever. (SEC 20-F filing)</div>
+                </div>
+                <div class="impact-signal">
+                  <div class="impact-signal-stat">53.9M</div>
+                  <div class="impact-signal-desc">Customers at end of 2021 — vs. 19.5M monthly visits to nubank.com.br in early 2025 (~90M customers). Scaling by ratio gives ~10–13M monthly visits in 2021. (Nu Q4 2021 earnings)</div>
+                </div>
+                <div class="impact-signal">
+                  <div class="impact-signal-stat">2–5%</div>
+                  <div class="impact-signal-desc">Industry benchmark: careers pages as % of total domain traffic for high-growth tech companies in active hiring mode. Applied to the main domain estimate to derive careers baseline.</div>
+                </div>
+                <div class="impact-signal">
+                  <div class="impact-signal-stat">#6 → #3</div>
+                  <div class="impact-signal-desc">Nubank climbed from #6 to #3 most attractive employer for Brazilian university students in Universum's 2022 ranking (26K students, 126 universities). Correlation, not causation — but directionally consistent. (Universum / building.nubank.com)</div>
+                </div>
+              </div>
+            </div>
+
+            <details class="impact-methodology">
+              <summary>Full methodology</summary>
+              <div class="impact-methodology-body">
+                <p><strong>Traffic baseline (2021):</strong> nubank.com.br had ~19.5M monthly visits in early 2025 (Semrush). Nubank had ~90M+ customers then vs. 53.9M at end of 2021 — a ratio of ~0.60. Applying that to 19.5M gives ~11.7M monthly visits, conservatively rounded to 10–13M.</p>
+                <p><strong>Careers % pre-hub:</strong> Before the hub, careers content lived on country-specific subpages and Greenhouse's own domain. Organic search for "nubank jobs" or "nubank emprego" would land on Greenhouse, not nubank.com. Conservatively, ~1–2% of main domain traffic had careers intent on-domain, plus a similar volume on boards.greenhouse.io/nubank. Total: ~300–450K/month across all touchpoints.</p>
+                <p><strong>Careers % post-hub:</strong> With a dedicated careers hub on the international domain — proper landing pages, job listings, country filtering, and structured data — careers traffic consolidates onto the owned domain. Industry benchmarks for high-growth tech: 4–6% of domain traffic to careers. Applied to ~13M total domain visits: ~520–780K/month. Range adjusted to 600–800K accounting for new international markets adding organic traffic.</p>
+                <p><strong>What this doesn't capture:</strong> Actual conversion rates (application submissions), quality of applicants, or the direct SEO uplift from structured data / Google Jobs indexing. Those would require Nubank's Search Console and ATS data.</p>
+                <p><em>These are estimates with a wide confidence interval. They're meant to show order-of-magnitude and directionality, not precision.</em></p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <!-- Discovery -->
+        <div class="case-section" id="nubank-discovery">
+          <div class="case-section-title"><span class="num">03</span> Discovery</div>
+          <div class="case-body">
+            <p>I ran SWOT and CSD Matrix sessions with stakeholders to map the landscape.</p>
+          </div>
+
+          <div class="swot-grid">
+            <div class="swot-cell">
+              <div class="swot-cell-title">Strengths</div>
+              <ul>
+                <li>Strong, recognizable brand worldwide</li>
+                <li>Existing blog layout as visual reference</li>
+                <li>Large, experienced dev team</li>
+              </ul>
+            </div>
+            <div class="swot-cell">
+              <div class="swot-cell-title">Weaknesses</div>
+              <ul>
+                <li>Fragmented country-specific websites</li>
+                <li>Inconsistent language and tone across regions</li>
+                <li>No centralized content management</li>
+              </ul>
+            </div>
+            <div class="swot-cell">
+              <div class="swot-cell-title">Opportunities</div>
+              <ul>
+                <li>Single domain SEO boost</li>
+                <li>Centralized careers hub for global hiring</li>
+                <li>Unified institutional presence post-IPO</li>
+              </ul>
+            </div>
+            <div class="swot-cell">
+              <div class="swot-cell-title">Threats</div>
+              <ul>
+                <li>Deployment complexity across regions</li>
+                <li>Redirect management for existing URLs</li>
+                <li>Country-specific legal and compliance needs</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="case-body">
+            <p>Key actionable insights: maintain visual consistency with the existing Blog layout. Coordinate with country-specific teams on redirects early. Involve SEO analysts from day one.</p>
+          </div>
+
+        </div>
+
+        <!-- Information Architecture -->
+        <div class="case-section" id="nubank-ia">
+          <div class="case-section-title"><span class="num">04</span> Information Architecture</div>
+          <div class="case-body">
+            <p>I designed the sitemap after gathering all institutional content across countries. Every page had implications that needed to be tracked.</p>
+          </div>
+
+          <div class="sitemap-tree">
+            <div class="sitemap-node root">international.nubank.com.br</div>
+            <div class="sitemap-children">
+              <div class="sitemap-node">About Us</div>
+              <div class="sitemap-node">Careers Hub</div>
+              <div class="sitemap-children">
+                <div class="sitemap-node">Job Listings</div>
+                <div class="sitemap-node">Job Page</div>
+              </div>
+              <div class="sitemap-node">Newsroom</div>
+              <div class="sitemap-children">
+                <div class="sitemap-node">Press Releases</div>
+                <div class="sitemap-node">Search</div>
+              </div>
+              <div class="sitemap-node">ESG Reports</div>
+              <div class="sitemap-node">Blog</div>
+            </div>
+          </div>
+
+          <table class="implications-table">
+            <thead>
+              <tr>
+                <th>Page</th>
+                <th>Implications</th>
+                <th>Attention Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>About Us</td>
+                <td>Content must reflect Nubank's global mission while adapting tone per country. Requires close alignment with comms team.</td>
+                <td>Legal review required for each country version. Financial disclosures vary by region.</td>
+              </tr>
+              <tr>
+                <td>Careers Hub</td>
+                <td>Integration with the ATS system for live job listing sync. Language switching must be seamless.</td>
+                <td>Country filter must be accurate — wrong listings create friction for candidates and legal exposure for HR.</td>
+              </tr>
+              <tr>
+                <td>Job Listings</td>
+                <td>Dynamic filtering by country, team, and seniority. Must pull real-time data from the ATS.</td>
+                <td>Edge case: jobs open in multiple countries must not show duplicate listings.</td>
+              </tr>
+              <tr>
+                <td>Job Page</td>
+                <td>Structured data (JSON-LD) required for Google Jobs indexing. Each job page is a SEO asset.</td>
+                <td>Benefits section differs by country — can't use a global template without conditional rendering.</td>
+              </tr>
+              <tr>
+                <td>Newsroom</td>
+                <td>Separate intake flow for PR team to publish press releases. Needs a CMS interface the comms team can use independently.</td>
+                <td>Media embargo dates must be enforced at the CMS level, not manually.</td>
+              </tr>
+              <tr>
+                <td>Press Releases</td>
+                <td>Dual content strategy: global releases (IPO, partnerships) and local releases (country-specific news).</td>
+                <td>Translation pipeline needs to be defined — who translates, who approves, what's the SLA?</td>
+              </tr>
+              <tr>
+                <td>ESG Reports</td>
+                <td>Annual heavy-content page. PDF downloads must be versioned and accessible.</td>
+                <td>Accessibility compliance is mandatory for ESG content — screen reader testing required.</td>
+              </tr>
+              <tr>
+                <td>Blog</td>
+                <td>Existing blog URLs must redirect cleanly to new domain structure. No broken links.</td>
+                <td>Duplicate content risk if the same post is published across country subpages without canonical tags.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Prototype -->
+        <div class="case-section" id="nubank-prototype">
+          <div class="case-section-title"><span class="num">05</span> Prototype</div>
+          <div class="case-body">
+            <p>High-fidelity wireframes for the Careers Hub flow. The biggest challenge was making job listings work across four countries with different languages, different benefit structures, and different legal requirements.</p>
+          </div>
+
+          <figure class="case-mockup">
+            <img src="../Hey, Gabriel Linares here!/Portfolio/Nubank International - UI UX/Captura_de_Tela_2023-03-21_as_10.18.38.png" alt="Careers Hub wireframes" loading="lazy">
+            <figcaption>High-fidelity wireframes: Careers Hub flow</figcaption>
+          </figure>
+          <figure class="case-video">
+            <video controls preload="metadata">
+              <source src="../videos/nubank/Gravacao_prototipo.mp4" type="video/mp4">
+            </video>
+            <figcaption>Prototype demo: full navigation flow</figcaption>
+          </figure>
+          <figure class="case-video">
+            <video controls preload="metadata">
+              <source src="../videos/nubank/Gravacao_de_Tela_2023-03-21_as_09.38.59.mp4" type="video/mp4">
+            </video>
+            <figcaption>Prototype walkthrough: Careers Hub</figcaption>
+          </figure>
+          <figure class="case-video">
+            <video controls preload="metadata">
+              <source src="../videos/nubank/Gravacao_de_Tela_2023-03-21_as_10.06.10.mp4" type="video/mp4">
+            </video>
+            <figcaption>Prototype walkthrough: Newsroom and ESG</figcaption>
+          </figure>
+          <figure class="case-video">
+            <video controls preload="metadata">
+              <source src="../videos/nubank/Gravacao_de_Tela_2023-03-21_as_11.14.33.mp4" type="video/mp4">
+            </video>
+            <figcaption>Prototype walkthrough: mobile responsive flow</figcaption>
+          </figure>
+        </div>
+
+        <!-- Published -->
+        <div class="case-section" id="nubank-published">
+          <div class="case-section-title"><span class="num">06</span> Published</div>
+          <div class="case-body">
+            <p>The site went live at international.nubank.com.br. Accessible, multi-lingual, one unified domain. All institutional content centralized for the first time.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>&copy; 2024 Gabe Linares</span>
+    <span>Design Engineer &middot; Sao Paulo, Brazil</span>
+  </footer>
+
+  <script src="../js/case.js"></script>
+  <style>
+    /* Impact Estimate Section */
+    .impact-model {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .impact-before-after {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .impact-col {
+      padding: 1.5rem;
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .impact-col--after {
+      border-color: rgba(130, 80, 255, 0.35);
+      background: rgba(130, 80, 255, 0.04);
+    }
+
+    .impact-col-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .impact-col--after .impact-col-label {
+      color: #a87fff;
+      opacity: 1;
+    }
+
+    .impact-col-sub {
+      font-size: 0.75rem;
+      opacity: 0.4;
+      margin-top: -0.75rem;
+    }
+
+    .impact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .impact-list li {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      padding-left: 1.2rem;
+      position: relative;
+      opacity: 0.75;
+    }
+
+    .impact-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      opacity: 0.4;
+    }
+
+    .impact-traffic-est {
+      margin-top: 0.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border, rgba(255,255,255,0.08));
+    }
+
+    .impact-traffic-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      opacity: 0.6;
+    }
+
+    .impact-traffic-est--after .impact-traffic-num {
+      opacity: 1;
+      color: #a87fff;
+    }
+
+    .impact-traffic-label {
+      font-size: 0.72rem;
+      opacity: 0.5;
+      margin-top: 0.25rem;
+      line-height: 1.4;
+    }
+
+    .impact-traffic-label span {
+      display: block;
+      opacity: 0.7;
+      font-style: italic;
+    }
+
+    .impact-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 2rem;
+      opacity: 0.3;
+    }
+
+    .impact-divider svg {
+      width: 24px;
+      height: 80px;
+    }
+
+    /* Signals grid */
+    .impact-signals {
+      border-top: 1px solid var(--border, rgba(255,255,255,0.08));
+      padding-top: 2rem;
+    }
+
+    .impact-signal-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      margin-bottom: 1.25rem;
+    }
+
+    .impact-signals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .impact-signal {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .impact-signal-stat {
+      font-family: 'Space Mono', monospace;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .impact-signal-desc {
+      font-size: 0.78rem;
+      line-height: 1.55;
+      opacity: 0.55;
+    }
+
+    /* Methodology accordion */
+    .impact-methodology {
+      border: 1px solid var(--border, rgba(255,255,255,0.08));
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .impact-methodology summary {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      opacity: 0.5;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: opacity 0.2s;
+    }
+
+    .impact-methodology summary::-webkit-details-marker { display: none; }
+
+    .impact-methodology summary::before {
+      content: '+';
+      font-size: 1rem;
+      line-height: 1;
+      transition: transform 0.2s;
+    }
+
+    .impact-methodology[open] summary::before {
+      content: '–';
+    }
+
+    .impact-methodology summary:hover { opacity: 1; }
+
+    .impact-methodology-body {
+      padding: 0 1.25rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .impact-methodology-body p {
+      font-size: 0.8rem;
+      line-height: 1.65;
+      opacity: 0.6;
+      margin: 0;
+    }
+
+    .impact-methodology-body strong {
+      opacity: 1;
+      color: inherit;
+    }
+
+    .impact-methodology-body em {
+      opacity: 0.45;
+    }
+
+    @media (max-width: 768px) {
+      .impact-before-after {
+        grid-template-columns: 1fr;
+      }
+      .impact-divider {
+        transform: rotate(0deg);
+        height: 30px;
+        padding: 0;
+      }
+      .impact-divider svg {
+        width: 30px;
+        height: 24px;
+        transform: rotate(90deg);
+      }
+      .impact-signals-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>
